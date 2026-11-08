@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" width="1600" height="1067" role="img" aria-label="Placeholder artwork: layered mountain ridges in cold blue haze">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1a26"/>
+      <stop offset="0.55" stop-color="#33505f"/>
+      <stop offset="1" stop-color="#9fb6bd"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c8d8dc" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c8d8dc" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1067" fill="url(#sky)"/>
+  <circle cx="380" cy="250" r="60" fill="#e8f1f2" opacity="0.55"/>
+  <path d="M0 640 L220 470 L400 590 L620 400 L820 560 L1010 430 L1230 600 L1420 480 L1600 620 L1600 1067 L0 1067 Z" fill="#4c6672" opacity="0.55"/>
+  <path d="M0 730 L260 570 L470 700 L700 540 L930 700 L1160 560 L1380 720 L1600 590 L1600 1067 L0 1067 Z" fill="#2c414c" opacity="0.8"/>
+  <rect y="640" width="1600" height="240" fill="url(#haze)"/>
+  <path d="M0 850 L280 700 L520 840 L780 690 L1040 850 L1300 700 L1600 830 L1600 1067 L0 1067 Z" fill="#16242c"/>
+  <path d="M0 960 C 340 900 620 1010 940 950 C 1240 894 1420 980 1600 940 L1600 1067 L0 1067 Z" fill="#0d151a"/>
+  <rect width="1600" height="1067" filter="url(#grain)" opacity="0.6"/>
+</svg>

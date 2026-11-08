@@ -1,0 +1,83 @@
+{
+  "collections": [
+    { "slug": "solo", "title": "Solo" },
+    { "slug": "duo", "title": "Duo" },
+    { "slug": "location", "title": "On location" }
+  ],
+  "images": [
+    {
+      "id": "portrait-01",
+      "src": "/images/portrait-01.svg",
+      "alt": "Placeholder artwork: soft window light falling across a dark room",
+      "caption": "Gown, window light, ten minutes before the ceremony",
+      "collection": "solo",
+      "width": 1600,
+      "height": 1067,
+      "featured": true
+    },
+    {
+      "id": "portrait-02",
+      "src": "/images/portrait-02.svg",
+      "alt": "Placeholder artwork: a single rim of light around a dark silhouette",
+      "caption": "Cap and gown, low key",
+      "collection": "solo",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "wedding-02",
+      "src": "/images/wedding-02.svg",
+      "alt": "Placeholder artwork: warm light pouring through a stone archway",
+      "caption": "Two of you, one doorway",
+      "collection": "duo",
+      "width": 1600,
+      "height": 1067,
+      "featured": true
+    },
+    {
+      "id": "wedding-03",
+      "src": "/images/wedding-03.svg",
+      "alt": "Placeholder artwork: evening field scattered with bokeh light",
+      "caption": "Straight after the ceremony, before the party",
+      "collection": "duo",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "wedding-01",
+      "src": "/images/wedding-01.svg",
+      "alt": "Placeholder artwork: dawn light breaking over sea cliffs",
+      "caption": "Early call at the coast",
+      "collection": "location",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "story-01",
+      "src": "/images/story-01.svg",
+      "alt": "Placeholder artwork: layered mountain ridges in cold blue haze",
+      "caption": "Ridge line, cold morning",
+      "collection": "location",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "story-02",
+      "src": "/images/story-02.svg",
+      "alt": "Placeholder artwork: sweeping dune curves in warm sand tones",
+      "caption": "Dunes, last light of the day",
+      "collection": "location",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "story-03",
+      "src": "/images/story-03.svg",
+      "alt": "Placeholder artwork: city windows glowing at night",
+      "caption": "After party, city windows",
+      "collection": "location",
+      "width": 1600,
+      "height": 1067
+    }
+  ]
+}

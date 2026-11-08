@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" width="1600" height="1067" role="img" aria-label="Placeholder artwork: dawn light breaking over sea cliffs">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d2c3f"/>
+      <stop offset="0.55" stop-color="#7a6a72"/>
+      <stop offset="1" stop-color="#ecb489"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8825f"/>
+      <stop offset="0.4" stop-color="#4a3f45"/>
+      <stop offset="1" stop-color="#191a22"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.07"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1067" fill="url(#sky)"/>
+  <circle cx="1140" cy="452" r="92" fill="#ffe6bd" opacity="0.9"/>
+  <circle cx="1140" cy="452" r="190" fill="#ffd9a3" opacity="0.12"/>
+  <rect y="596" width="1600" height="471" fill="url(#sea)"/>
+  <path d="M0 610 L250 486 L470 596 L706 456 L968 588 L1244 498 L1600 606 L1600 648 L0 648 Z" fill="#1b1d26" opacity="0.9"/>
+  <path d="M0 700 C 260 656 430 742 706 702 C 986 660 1210 728 1600 690 L1600 1067 L0 1067 Z" fill="#111319"/>
+  <path d="M0 640 L200 592 L360 646 L560 604 L760 650 L1600 630 L1600 1067 L0 1067 Z" fill="#0c0d12" opacity="0.75"/>
+  <rect width="1600" height="1067" filter="url(#grain)" opacity="0.6"/>
+</svg>

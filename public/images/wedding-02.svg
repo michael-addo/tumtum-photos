@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" width="1600" height="1067" role="img" aria-label="Placeholder artwork: warm light pouring through a stone archway">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a211b"/>
+      <stop offset="1" stop-color="#120e0b"/>
+    </linearGradient>
+    <linearGradient id="light" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#fff0d2"/>
+      <stop offset="0.45" stop-color="#f0c289"/>
+      <stop offset="1" stop-color="#b5763f"/>
+    </linearGradient>
+    <radialGradient id="spill" cx="0.5" cy="0.1" r="0.9">
+      <stop offset="0" stop-color="#ffd9a1" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#ffd9a1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.09"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1067" fill="url(#wall)"/>
+  <path d="M520 1067 L520 470 A280 280 0 0 1 1080 470 L1080 1067 Z" fill="url(#light)"/>
+  <path d="M500 1067 L500 470 A300 300 0 0 1 1100 470 L1100 1067" fill="none" stroke="#f6dcb4" stroke-opacity="0.28" stroke-width="14"/>
+  <path d="M560 1067 L880 1067 L1180 500 L880 380 Z" fill="url(#spill)"/>
+  <rect x="0" y="880" width="1600" height="187" fill="#0b0908" opacity="0.75"/>
+  <circle cx="800" cy="700" r="52" fill="#1a1310" opacity="0.55"/>
+  <circle cx="800" cy="700" r="20" fill="#160f0c" opacity="0.7"/>
+  <rect width="1600" height="1067" filter="url(#grain)" opacity="0.65"/>
+</svg>

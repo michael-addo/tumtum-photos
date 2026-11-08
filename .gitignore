@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.local
+
+# Enquiries are personal data — never commit them.
+data/enquiries.jsonl
+
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" width="1600" height="1067" role="img" aria-label="Placeholder artwork: evening field scattered with bokeh light">
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b2a3e"/>
+      <stop offset="0.5" stop-color="#8a5a4a"/>
+      <stop offset="1" stop-color="#d99a5f"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f5a33"/>
+      <stop offset="0.35" stop-color="#33301c"/>
+      <stop offset="1" stop-color="#14150f"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="26"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1067" fill="url(#dusk)"/>
+  <circle cx="1210" cy="330" r="140" fill="#ffdca8" opacity="0.35" filter="url(#blur)"/>
+  <path d="M0 620 C 300 580 520 640 810 604 C 1120 566 1330 626 1600 592 L1600 1067 L0 1067 Z" fill="url(#field)"/>
+  <g fill="#ffe2ae" opacity="0.55">
+    <circle cx="250" cy="480" r="16"/><circle cx="392" cy="392" r="30"/><circle cx="520" cy="508" r="12"/>
+    <circle cx="700" cy="360" r="24"/><circle cx="846" cy="452" r="36"/><circle cx="980" cy="330" r="14"/>
+    <circle cx="1118" cy="470" r="44"/><circle cx="1290" cy="392" r="20"/><circle cx="1432" cy="500" r="28"/>
+    <circle cx="180" cy="596" r="22"/><circle cx="624" cy="612" r="18"/><circle cx="1352" cy="628" r="16"/>
+  </g>
+  <g stroke="#0e0f0a" stroke-width="7" stroke-linecap="round" opacity="0.85">
+    <path d="M300 1067 C 320 900 340 820 330 760"/>
+    <path d="M620 1067 C 640 920 660 850 650 790"/>
+    <path d="M980 1067 C 1000 910 1010 840 1000 780"/>
+    <path d="M1290 1067 C 1310 930 1320 860 1310 800"/>
+  </g>
+  <rect width="1600" height="1067" filter="url(#grain)" opacity="0.6"/>
+</svg>

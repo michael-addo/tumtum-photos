@@ -1,0 +1,240 @@
+/* TUMTUM PHOTOS — admin dashboard styles. */
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f2f6f3;
+  --paper: #10201a;
+  --muted: #5d6f66;
+  --line: rgba(16, 32, 26, 0.14);
+  --accent: #0b6b4a;
+  --accent-ink: #ffffff;
+  --danger: #b4342a;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.admin-header {
+  padding: 2rem clamp(1rem, 4vw, 3rem) 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.admin-header p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.admin-main {
+  padding: 2rem clamp(1rem, 4vw, 3rem) 4rem;
+  max-width: 90rem;
+}
+
+.token-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  max-width: 46rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.field input {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--paper);
+  background: var(--bg);
+  border: 1px solid rgba(16, 32, 26, 0.3);
+  border-radius: 3px;
+}
+
+.btn {
+  padding: 0.72rem 1.35rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-bright);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+.btn-quiet {
+  color: var(--paper);
+  background: transparent;
+  border-color: rgba(16, 32, 26, 0.3);
+}
+
+.btn-quiet:hover {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.status {
+  margin: 1rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.status.is-error {
+  color: var(--danger);
+}
+
+.table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: var(--bg-soft);
+}
+
+td.message {
+  min-width: 22rem;
+  max-width: 34rem;
+  white-space: pre-wrap;
+  color: var(--muted);
+}
+
+td.nowrap {
+  white-space: nowrap;
+}
+
+td a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+.empty {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px dashed rgba(16, 32, 26, 0.3);
+  border-radius: 3px;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .token-form {
+    padding: 1.1rem;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

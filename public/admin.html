@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enquiries — Northlight Studio admin</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/admin.css" />
+    <script src="/admin.js" defer></script>
+  </head>
+  <body>
+    <header class="admin-header">
+      <h1>Enquiries</h1>
+      <p>Northlight Studio &middot; internal</p>
+    </header>
+
+    <main class="admin-main">
+      <form class="token-form" data-token-form>
+        <div class="field">
+          <label for="token">Admin token</label>
+          <input
+            id="token"
+            name="token"
+            type="password"
+            autocomplete="current-password"
+            spellcheck="false"
+            required
+            placeholder="Paste ADMIN_TOKEN"
+          />
+        </div>
+        <button class="btn" type="submit">Unlock</button>
+        <button class="btn btn-quiet" type="button" data-sign-out hidden>Sign out</button>
+      </form>
+
+      <div class="toolbar" hidden data-toolbar>
+        <p class="status" role="status" aria-live="polite" data-status></p>
+        <div class="toolbar-actions">
+          <button class="btn btn-quiet" type="button" data-refresh>Refresh</button>
+          <button class="btn btn-quiet" type="button" data-export>Download CSV</button>
+        </div>
+      </div>
+
+      <p class="status is-error" data-error role="status" aria-live="polite"></p>
+
+      <div class="table-wrap" hidden data-table-wrap>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Received</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Type</th>
+              <th scope="col">Date</th>
+              <th scope="col">Budget</th>
+              <th scope="col">Message</th>
+            </tr>
+          </thead>
+          <tbody data-rows></tbody>
+        </table>
+      </div>
+
+      <p class="empty" hidden data-empty>
+        No enquiries yet. Submissions from the site's contact form will appear here.
+      </p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" width="1600" height="1067" role="img" aria-label="Placeholder artwork: a single rim of light around a dark silhouette">
+  <defs>
+    <radialGradient id="back" cx="0.5" cy="0.42" r="0.62">
+      <stop offset="0" stop-color="#3a3530"/>
+      <stop offset="0.65" stop-color="#171513"/>
+      <stop offset="1" stop-color="#0a0908"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd9a8" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffd9a8" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.11"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1067" fill="url(#back)"/>
+  <ellipse cx="1120" cy="380" rx="260" ry="260" fill="#f2c288" opacity="0.16" filter="url(#glow)"/>
+  <path d="M640 1067 C 640 830 690 700 800 640 C 910 700 960 830 960 1067 Z" fill="#0a0908"/>
+  <ellipse cx="800" cy="470" rx="170" ry="205" fill="#0a0908"/>
+  <path d="M630 1067 C 630 830 690 700 800 640" fill="none" stroke="url(#rim)" stroke-width="26" stroke-linecap="round" opacity="0.85"/>
+  <path d="M800 265 C 905 265 968 350 968 470 C 968 545 950 600 920 640" fill="none" stroke="url(#rim)" stroke-width="20" stroke-linecap="round" opacity="0.75"/>
+  <rect width="1600" height="1067" filter="url(#grain)" opacity="0.75"/>
+</svg>
