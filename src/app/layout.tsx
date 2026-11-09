@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair Display } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -10,7 +10,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair Display({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
@@ -58,6 +58,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  metadataBase: new URL("https://tumtum-photos.vercel.app"),
   icons: {
     icon: "/favicon.svg",
   },
