@@ -74,7 +74,7 @@ export default function AdminDashboard() {
     setTokenProvided(false);
     setEnquiries([]);
     setError(null);
-    const url = new URL(window.location);
+    const url = new URL(window.location.href);
     url.searchParams.delete('token');
     window.history.pushState(null, '', url.toString());
   };
