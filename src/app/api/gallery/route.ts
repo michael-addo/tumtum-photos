@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
-import fs from "node:fs/promises";
-import path from "node:path";
+import { NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase-client';
+import { getPublicImageUrl } from '@/lib/gallery';
 
 export interface GalleryImage {
   id: string;
@@ -23,16 +23,59 @@ export interface GalleryData {
   images: GalleryImage[];
 }
 
+export const revalidate = 3600;
+
 export async function GET() {
+  if (!supabase) {
+    return NextResponse.json({
+      collections: [
+        { slug: 'solo', title: 'Solo' },
+        { slug: 'duo', title: 'Duo' },
+        { slug: 'location', title: 'On Location' },
+      ],
+      images: [],
+    });
+  }
+
   try {
-    const filePath = path.join(process.cwd(), "data", "gallery.json");
-    const raw = await fs.readFile(filePath, "utf8");
-    const data = JSON.parse(raw) as GalleryData;
+    // Fetch collections
+    const { data: collections, error: collectionsError } = await supabase
+      .from('gallery_collections')
+      .select('slug, title')
+      .order('sort_order');
+
+    if (collectionsError) throw collectionsError;
+
+    // Fetch images
+    const { data: images, error: imagesError } = await supabase
+      .from('gallery_images')
+      .select('*')
+      .order('sort_order');
+
+    if (imagesError) throw imagesError;
+
+    const data: GalleryData = {
+      collections: (collections || []).map(c => ({
+        slug: c.slug,
+        title: c.title,
+      })),
+      images: (images || []).map(img => ({
+        id: img.id,
+        src: getPublicImageUrl(img.path),
+        alt: img.alt_text,
+        collection: img.collection_slug,
+        width: img.width,
+        height: img.height,
+        caption: img.caption || undefined,
+        featured: img.featured,
+      })),
+    };
+
     return NextResponse.json(data);
   } catch (error) {
-    console.error("Gallery error:", error);
+    console.error('Gallery error:', error);
     return NextResponse.json(
-      { error: "gallery_unavailable", message: "Could not load gallery data." },
+      { error: 'gallery_unavailable', message: 'Could not load gallery data.' },
       { status: 500 },
     );
   }

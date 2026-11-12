@@ -6,7 +6,9 @@ const envSchema = z.object({
   NODE_ENV: z
     .enum(["development", "production", "test"])
     .default("development"),
-  DATABASE_URL: z.string().default("file:./prisma/dev.db"),
+  NEXT_PUBLIC_SUPABASE_URL: z.string().optional(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().optional(),
   ADMIN_TOKEN: z.string().optional(),
   SMTP_HOST: z.string().optional(),
   SMTP_PORT: z.coerce.number().optional(),
@@ -22,3 +24,13 @@ if (!parsed.success) {
 }
 
 export const env = parsed.data;
+
+export const hasSupabaseConfig = () => {
+  return !!(env.NEXT_PUBLIC_SUPABASE_URL && env.SUPABASE_SERVICE_ROLE_KEY);
+};
+
+export const supabaseConfig = {
+  url: env.NEXT_PUBLIC_SUPABASE_URL || '',
+  anonKey: env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+  serviceRoleKey: env.SUPABASE_SERVICE_ROLE_KEY || '',
+};

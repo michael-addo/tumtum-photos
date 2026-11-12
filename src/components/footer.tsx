@@ -53,6 +53,16 @@ export function Footer() {
                   Terms &amp; Conditions
                 </a>
               </li>
+              <li>
+                <Link href="/login" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  Sign In
+                </Link>
+              </li>
+              <li>
+                <Link href="/signup" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                  Create Account
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
