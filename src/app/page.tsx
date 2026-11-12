@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PackageCard } from "@/components/package-card";
-import { Hero } from "@/components/hero";
+import { GalleryHero } from "@/components/gallery-hero";
 import { getGallery } from "@/lib/gallery";
 
 export const revalidate = 3600;
@@ -64,7 +64,7 @@ export default async function Home() {
 
   return (
     <div>
-      <Hero />
+      <GalleryHero images={gallery.images} />
 
       <section id="packages" className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
